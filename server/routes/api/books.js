@@ -125,6 +125,7 @@ router.get("/stats", async (req, res) => {
     .then((arg) => result.push(arg[0]))
     .catch((err) => res.json({ message: "stat fetch failed" }));
   res.json({ query_results: result });
+  console.log({ query_results: result });
 });
 
 router.get("/:id", (req, res) => {

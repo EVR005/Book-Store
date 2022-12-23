@@ -35,6 +35,20 @@ const ShowBookList = (props) => {
     }
   };
 
+  // const setRangeQuery = (event) => {
+  //   setTextValue(event.target.value);
+  //   if (event.target.value === "") {
+  //     axios
+  //       .put("http://localhost:8082/api/books"+data)
+  //       .then((res) => {
+  //         setBooks(res.data);
+  //       })
+  //       .catch((err) => {
+  //         console.log("Error from ShowBookList");
+  //       });
+  //   }
+  // };
+
   const sendChoice = (event) => {
     axios
       .get(`http://localhost:8082/api/books/${textvalue}/${event.value}`)
@@ -86,6 +100,17 @@ const ShowBookList = (props) => {
                     onChange={setSearchQuery}
                   ></input>
                 </div>
+                {/* not existing */}
+                {/* <div>
+                  <input
+                    className="form-control input-sm"
+                    type="text"
+                    name="range-query"
+                    id="range"
+                    onChange={setRangeQuery}
+                  ></input>
+                </div> */}
+                {/* not existing */}
                 <div className="col-md-3">
                   <Select
                     options={options}
@@ -101,7 +126,8 @@ const ShowBookList = (props) => {
                     }}
                   />
                 </div>
-                <div className="col-md-6">
+
+                <div className="col-md-3">
                   <Link
                     to="/view-stats"
                     className="btn btn-outline-warning float-left"

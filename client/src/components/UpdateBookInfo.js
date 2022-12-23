@@ -67,6 +67,7 @@ function UpdateBookInfo(props) {
       description: description_0,
       published_date: published_date_0,
       publisher: publisher_0,
+      updated_date: Date(),
     };
 
     axios
