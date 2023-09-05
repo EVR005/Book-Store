@@ -58,7 +58,7 @@ const ShowBookList = (props) => {
         console.log(event.value + " : " + textvalue);
       })
       .catch((err) => {
-        console.log("Error from ShowBookList");
+        console.log("Error from ShowBookList choices : ", err);
       });
   };
 

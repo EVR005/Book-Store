@@ -20,8 +20,16 @@ const ViewStats = (props) => {
       .get("http://localhost:8082/api/books/stats")
       .then((res) => {
         console.log(res.data);
-        setRecentPub(res.data["query_results"][0]["recently_published"]);
-        setRecentUpdate(res.data["query_results"][1]["recently_updated"]);
+        setRecentPub(
+          res.data["query_results"][0] != null
+            ? res.data["query_results"][0]["recently_published"]
+            : 0
+        );
+        setRecentUpdate(
+          res.data["query_results"][1] != null
+            ? res.data["query_results"][1]["recently_updated"]
+            : 0
+        );
         setMostPub(res.data["query_results"][2]["_id"]);
         setMostPubCount(res.data["query_results"][2]["count"]);
         setMostAuth(res.data["query_results"][3]["_id"]);
